@@ -7,3 +7,7 @@
 	font-family: "MouseMemoirs-Regular";
 	font-size: x-large !important;
 }
+
+#divider {
+	background-color: brown;
+}
