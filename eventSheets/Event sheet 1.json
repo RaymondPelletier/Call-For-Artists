@@ -133,9 +133,75 @@
 						"selector": "\"\"",
 						"type": "one"
 					}
+				},
+				{
+					"id": "set-content-attribute",
+					"objectClass": "Rope",
+					"sid": 854856908641877,
+					"parameters": {
+						"mode": "set",
+						"attribute": "\"src\"",
+						"value": "\"./rope.png\"",
+						"selector": "\"\"",
+						"type": "one"
+					}
+				},
+				{
+					"id": "set-content-attribute",
+					"objectClass": "Scroll",
+					"sid": 378930783076654,
+					"parameters": {
+						"mode": "set",
+						"attribute": "\"src\"",
+						"value": "\"./scroll.png\"",
+						"selector": "\"\"",
+						"type": "one"
+					}
+				},
+				{
+					"id": "set-content-attribute",
+					"objectClass": "Plank",
+					"sid": 291602325025384,
+					"parameters": {
+						"mode": "set",
+						"attribute": "\"src\"",
+						"value": "\"./plank.png\"",
+						"selector": "\"\"",
+						"type": "one"
+					}
+				},
+				{
+					"id": "set-content-attribute",
+					"objectClass": "Palatte",
+					"sid": 496082182933086,
+					"parameters": {
+						"mode": "set",
+						"attribute": "\"src\"",
+						"value": "\"./palatte.png\"",
+						"selector": "\"\"",
+						"type": "one"
+					}
 				}
 			],
 			"sid": 915418158245706
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 924039107677260
+				}
+			],
+			"actions": [
+				{
+					"id": "set-focused",
+					"objectClass": "Prompt",
+					"sid": 225956189389797
+				}
+			],
+			"sid": 601605003585833
 		}
 	],
 	"sid": 877465935109548

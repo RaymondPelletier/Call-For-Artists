@@ -51,7 +51,11 @@
 			"JSON",
 			"Creation",
 			"Leonardo",
-			"HTMLElement"
+			"Rope",
+			"Scroll",
+			"Plank",
+			"Palatte",
+			"Controls"
 		],
 		"subfolders": []
 	},
@@ -189,6 +193,38 @@
 					"sid": 260461079266645,
 					"file-info": {
 						"purpose": "stylesheet"
+					}
+				},
+				{
+					"name": "rope.png",
+					"type": "image/png",
+					"sid": 828840420382262,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "scroll.png",
+					"type": "image/png",
+					"sid": 694875118249710,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "plank.png",
+					"type": "image/png",
+					"sid": 362475411535108,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "palatte.png",
+					"type": "image/png",
+					"sid": 712644376244582,
+					"file-info": {
+						"purpose": "none"
 					}
 				}
 			],

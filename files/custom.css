@@ -1,13 +1,23 @@
 #prompt {
 	font-family: "MouseMemoirs-Regular";
 	font-size: xx-large !important;
+    background: transparent;
+    border: none;
+    outline: none;
+	text-align: center;
+	text-size-adjust: auto;
 }
 
 #initiator {
 	font-family: "MouseMemoirs-Regular";
 	font-size: x-large !important;
+	background: transparent;
+    border: none;
+    outline: none;
 }
 
-#divider {
-	background-color: brown;
+#plank {
+    background: transparent;
+    border: none;
+    outline: none;
 }

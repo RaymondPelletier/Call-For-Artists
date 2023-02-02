@@ -1,0 +1,153 @@
+Write a POST handler for the Parse cloud framework which receives a text prompt, calls the DALLe service and returns the url of the first generated image
+
+
+
+var request = require('request');
+
+Parse.Cloud.define("getImageFromDALL-E", function(request, response) {
+  var prompt = request.params.prompt;
+  
+  var options = {
+    method: 'POST',
+    url: 'https://api.openai.com/v1/images/generations',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + process.env.OPENAI_API_KEY
+    },
+    body: JSON.stringify({
+      model: 'dall-e',
+      prompt: prompt
+    })
+  };
+
+  request(options, function (error, res, body) {
+    if (error) {
+      response.error(error);
+    } else {
+      var imageUrl = JSON.parse(body).data[0].url;
+      response.success(imageUrl);
+    }
+  });
+});
+
+
+Give me a version which uses Parse.Cloud.httpRequest for the post to the DALL-E API
+
+
+Parse.Cloud.define("getImageFromDALL-E", function(request, response) {
+  var prompt = request.params.prompt;
+
+  Parse.Cloud.httpRequest({
+    method: 'POST',
+    url: 'https://api.openai.com/v1/images/generations',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + process.env.OPENAI_API_KEY
+    },
+    body: {
+      model: 'dall-e',
+      prompt: prompt
+    },
+    success: function(httpResponse) {
+      var imageUrl = JSON.parse(httpResponse.text).data[0].url;
+      response.success(imageUrl);
+    },
+    error: function(httpResponse) {
+      response.error(httpResponse.text);
+    }
+  });
+});
+
+
+change the code to retrieve the api key from the result of Parse.Config
+
+
+Parse.Cloud.define("getImageFromDALL-E", function(request, response) {
+  var prompt = request.params.prompt;
+
+  Parse.Config.get().then(function(config) {
+    var apiKey = config.get("OPENAI_API_KEY");
+
+    Parse.Cloud.httpRequest({
+      method: 'POST',
+      url: 'https://api.openai.com/v1/images/generations',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + apiKey
+      },
+      body: {
+        model: 'dall-e',
+        prompt: prompt
+      },
+      success: function(httpResponse) {
+        var imageUrl = JSON.parse(httpResponse.text).data[0].url;
+        response.success(imageUrl);
+      },
+      error: function(httpResponse) {
+        response.error(httpResponse.text);
+      }
+    });
+  }, function(error) {
+    response.error("Could not retrieve API key: " + error.message);
+  });
+});
+
+rewrite the code to use await instead of callbacks
+
+Parse.Cloud.define("getImageFromDALL-E", async function(request, response) {
+  var prompt = request.params.prompt;
+
+  try {
+    var config = await Parse.Config.get();
+    var apiKey = config.get("OPENAI_API_KEY");
+
+    var httpResponse = await Parse.Cloud.httpRequest({
+      method: 'POST',
+      url: 'https://api.openai.com/v1/images/generations',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + apiKey
+      },
+      body: {
+        model: 'dall-e',
+        prompt: prompt
+      }
+    });
+
+    var imageUrl = JSON.parse(httpResponse.text).data[0].url;
+    response.success(imageUrl);
+  } catch (error) {
+    response.error("Error: " + error.message);
+  }
+});
+
+have the request to dall-e ask for a single 256x256 image
+
+Parse.Cloud.define("getImageFromDALL-E", async function(request, response) {
+  var prompt = request.params.prompt;
+
+  try {
+    var config = await Parse.Config.get();
+    var apiKey = config.get("OPENAI_API_KEY");
+
+    var httpResponse = await Parse.Cloud.httpRequest({
+      method: 'POST',
+      url: 'https://api.openai.com/v1/images/generations',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + apiKey
+      },
+      body: {
+        model: 'dall-e',
+        prompt: prompt,
+        size: '256x256',
+        response_format: 'url'
+      }
+    });
+
+    var imageUrl = httpResponse.text;
+    response.success(imageUrl);
+  } catch (error) {
+    response.error("Error: " + error.message);
+  }
+});
