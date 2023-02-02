@@ -29,6 +29,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "InstantGames",
+			"name": "Instant Games",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
@@ -55,7 +62,8 @@
 			"Scroll",
 			"Plank",
 			"Palatte",
-			"Controls"
+			"Controls",
+			"InstantGames"
 		],
 		"subfolders": []
 	},
@@ -223,6 +231,22 @@
 					"name": "palatte.png",
 					"type": "image/png",
 					"sid": 712644376244582,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "scroll 2.png",
+					"type": "image/png",
+					"sid": 158879299177618,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "palatte 2.png",
+					"type": "image/png",
+					"sid": 737123095174424,
 					"file-info": {
 						"purpose": "none"
 					}

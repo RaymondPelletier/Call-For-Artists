@@ -59,10 +59,10 @@
 				{
 					"id": "post-to-url",
 					"objectClass": "AJAX",
-					"sid": 844742664940119,
+					"sid": 607726418155036,
 					"parameters": {
 						"tag": "\"test\"",
-						"url": "\"https://parseapi.back4app.com/functions/generate\"",
+						"url": "\"https://parseapi.back4app.com/functions/mona-lisa\"",
 						"data": "JSON.ToCompactString",
 						"method": "\"POST\""
 					}
@@ -149,11 +149,11 @@
 				{
 					"id": "set-content-attribute",
 					"objectClass": "Scroll",
-					"sid": 378930783076654,
+					"sid": 748416721741470,
 					"parameters": {
 						"mode": "set",
 						"attribute": "\"src\"",
-						"value": "\"./scroll.png\"",
+						"value": "\"./scroll 2.png\"",
 						"selector": "\"\"",
 						"type": "one"
 					}
@@ -173,11 +173,11 @@
 				{
 					"id": "set-content-attribute",
 					"objectClass": "Palatte",
-					"sid": 496082182933086,
+					"sid": 640516451775067,
 					"parameters": {
 						"mode": "set",
 						"attribute": "\"src\"",
-						"value": "\"./palatte.png\"",
+						"value": "\"./palatte 2.png\"",
 						"selector": "\"\"",
 						"type": "one"
 					}
