@@ -59,12 +59,28 @@
 				{
 					"id": "post-to-url",
 					"objectClass": "AJAX",
-					"sid": 607726418155036,
+					"sid": 338717266133867,
 					"parameters": {
 						"tag": "\"test\"",
-						"url": "\"https://parseapi.back4app.com/functions/mona-lisa\"",
+						"url": "\"https://parseapi.back4app.com/functions/dall-e\"",
 						"data": "JSON.ToCompactString",
 						"method": "\"POST\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Creation",
+					"sid": 317176010973044,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "vitruvianman",
+					"sid": 525806053085501,
+					"parameters": {
+						"visibility": "visible"
 					}
 				}
 			],
@@ -92,9 +108,25 @@
 					}
 				},
 				{
+					"id": "set-visible",
+					"objectClass": "vitruvianman",
+					"sid": 777644261813167,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Creation",
+					"sid": 129982392544978,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
 					"id": "set-elem-attribute",
 					"objectClass": "Creation",
-					"sid": 493906458794200,
+					"sid": 528275844426926,
 					"parameters": {
 						"attribute-name": "\"src\"",
 						"attribute-value": "JSON.Get(\"result.data.data.0.url\")"
@@ -199,6 +231,14 @@
 					"id": "set-focused",
 					"objectClass": "Prompt",
 					"sid": 225956189389797
+				},
+				{
+					"id": "rotate-clockwise",
+					"objectClass": "vitruvianman",
+					"sid": 627381202137863,
+					"parameters": {
+						"degrees": "2"
+					}
 				}
 			],
 			"sid": 601605003585833
