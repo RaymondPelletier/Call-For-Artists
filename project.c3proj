@@ -43,6 +43,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -71,7 +78,8 @@
 			"Palatte",
 			"Controls",
 			"InstantGames",
-			"vitruvianman"
+			"vitruvianman",
+			"Keyboard"
 		],
 		"subfolders": []
 	},
@@ -95,16 +103,7 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [
-				{
-					"name": "main.js",
-					"type": "application/javascript",
-					"sid": 655022398369638,
-					"script-info": {
-						"purpose": "main"
-					}
-				}
-			],
+			"items": [],
 			"subfolders": []
 		},
 		"sound": {
